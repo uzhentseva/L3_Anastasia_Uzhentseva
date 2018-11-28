@@ -44,10 +44,10 @@ struct Car {                            // структура авто
     var carrierLoad: Double {
         
         didSet {                                                     // вывод информации о свободном месте багажника
-            print("2. Авто загружено на \(oldValue) литров")
+            print("2. Авто было загружено на \(oldValue) литров")
         } //
         willSet {
-            print("1. \(newValue) почему это число господи")
+            print("1. \(newValue) - новое значение загрузки")
         }
     }
     
@@ -74,10 +74,19 @@ print("-------------багажник-------------\n")
 
 car1.carrierLoad = 20
 
-car1.printLoad()
-car1.capaсityLeft()
+//car1.printLoad()
+//car1.capaсityLeft()
 
+car1.carrierLoad = 17
 
+car1.carrierLoad = 13
+
+//1. 20.0 - новое значение загрузки
+//2. Авто было загружено на 35.0 литров
+//1. 17.0 - новое значение загрузки
+//2. Авто было загружено на 20.0 литров
+//1. 13.0 - новое значение загрузки
+//2. Авто было загружено на 17.0 литров
 
 //struct Truck {
 //    let brandTruck: String

@@ -47,7 +47,7 @@ struct Car {                            // структура авто
             print("2. Авто загружено на \(oldValue) литров")
         } //
         willSet {
-            print("1. Свободно \(newValue) литров после первой загрузки")
+            print("1. \(newValue) почему это число господи")
         }
     }
     
@@ -57,16 +57,10 @@ struct Car {                            // структура авто
     
     func capaсityLeft() {
         let freeSpace = capacity - carrierLoad
-//        if carrierLoad > capacity {
-//            print("Загрузка больше вместимости!")
-//        }
         print("Ещё можно загрузить \(freeSpace) литров")
     }
     
 }
-
-// ещё нужна проверка на капасити багажника! чтобы загрузка не больше вместимости - Где это можно сделать?
-// сделать иниты()?? Надо?
 
 var car1 = Car(brand: "Skoda", year: 2018, capacity: 50, motorState: .on, windowOpen: .open, carrierLoad: 35)
 
@@ -74,6 +68,9 @@ print("Авто марки \(car1.brand)")
 
 car1.closeWindow()
 car1.motorState = .off
+
+print("\n")
+print("-------------багажник-------------\n")
 
 car1.carrierLoad = 20
 

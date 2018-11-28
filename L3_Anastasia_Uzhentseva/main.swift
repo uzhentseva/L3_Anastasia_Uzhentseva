@@ -44,14 +44,11 @@ struct Car {                            // структура авто
     var carrierLoad: Double {
         
         didSet {                                                     // вывод информации о свободном месте багажника
-            print("Авто загружено на \(oldValue) литров")
-            let space = capacity - oldValue                          // считает правильно
-            print("Можно загрузить авто ещё на \(space) литров")
+            print("2. Авто загружено на \(oldValue) литров")
+        } //
+        willSet {
+            print("1. Свободно \(newValue) литров после первой загрузки")
         }
-//        willSet {
-//            let newSpace = newValue - carrierLoad                  // считает неправильно! проверить что и как
-//            print("После загрузки осталось \(newSpace) литров")
-//        }
     }
     
     func printLoad() {                                               // вывод информации о загрузке багажника

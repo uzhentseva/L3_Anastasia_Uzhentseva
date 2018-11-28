@@ -45,7 +45,7 @@ struct Car {                            // структура авто
         
         didSet {                                                     // вывод информации о свободном месте багажника
             print("2. Авто было загружено на \(oldValue) литров")
-        } //
+        }
         willSet {
             print("1. \(newValue) - новое значение загрузки")
         }
@@ -65,35 +65,14 @@ struct Car {                            // структура авто
 var car1 = Car(brand: "Skoda", year: 2018, capacity: 50, motorState: .on, windowOpen: .open, carrierLoad: 35)
 
 print("Авто марки \(car1.brand)")
-
 car1.closeWindow()
 car1.motorState = .off
 
 print("\n")
-print("-------------багажник-------------\n")
 
 car1.carrierLoad = 20
-
-//car1.printLoad()
-//car1.capaсityLeft()
-
 car1.carrierLoad = 17
-
 car1.carrierLoad = 13
 
-//1. 20.0 - новое значение загрузки
-//2. Авто было загружено на 35.0 литров
-//1. 17.0 - новое значение загрузки
-//2. Авто было загружено на 20.0 литров
-//1. 13.0 - новое значение загрузки
-//2. Авто было загружено на 17.0 литров
-
-//struct Truck {
-//    let brandTruck: String
-//    let yearTruck: Int
-//    let bodyVol: Double
-//    var motorOn: motorOn
-//    var windowOpen: windowOpen
-//    var bodyLoad: Double
-//}
-//var truck1 = Truck(brandTruck: "Volvo", yearTruck: 2010, bodyVol: 500, motorOn: .off, windowOpen: .close, bodyLoad: 2)
+car1.printLoad()
+car1.capaсityLeft()

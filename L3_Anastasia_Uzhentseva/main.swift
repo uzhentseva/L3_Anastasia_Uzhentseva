@@ -53,11 +53,19 @@ struct Car {                            // структура авто
         print("Ещё можно загрузить \(freeSpace) литров")
     }
     
+    func load(volume: Double) {                                      // погрузить/выгрузить груз опеределённого объёма
+        let vol = carrierLoad + volume
+        print("В багажнике теперь загружено всего \(vol) литров объёма ")
+    }
+    
+    func unload(volume: Double) {
+        print("Из багажника выгрузили \(volume) литров объёма ")
+    }
 }
 
 var car1 = Car(brand: "Skoda", year: 2018, capacity: 50, motorState: .on, windowOpen: .open, carrierLoad: 35)
 
-print("Авто марки \(car1.brand)")
+print("Авто марки \(car1.brand)") //выводим марку, состояние окна и двигателя
 car1.closeWindow()
 car1.openWindow()
 car1.motorState = .off
@@ -65,14 +73,19 @@ car1.motorState = .on
 
 print("\n")
 
-car1.carrierLoad = 20
+car1.carrierLoad = 20 // добавляем груз
 car1.carrierLoad = 17
 car1.carrierLoad = 13
 
 print("\n")
 
-car1.printLoad()
-car1.capaсityLeft()
+car1.printLoad() // выводим инфо о загрузке багажника
+car1.capaсityLeft() // об оставшемся объёме
+
+print("\n")
+
+car1.load(volume: 5) // грузим
+car1.unload(volume: 5) // выгружаем
 
 print("\n")
 
@@ -86,7 +99,6 @@ print(car1)
 //        Двигатель не работает
 //        Двигатель работает
 //
-//
 //        1. 20.0 - новое значение загрузки
 //        2. Авто было загружено на 35.0 литров
 //        1. 17.0 - новое значение загрузки
@@ -94,9 +106,10 @@ print(car1)
 //        1. 13.0 - новое значение загрузки
 //        2. Авто было загружено на 17.0 литров
 //
-//
 //        Авто загружено на 13.0 литров
 //        Ещё можно загрузить 37.0 литров
 //
+//        В багажнике теперь загружено всего 18.0 литров объёма
+//        Из багажника выгрузили 5.0 литров объёма
 //
 //        Car(brand: "Skoda", year: 2018, capacity: 50.0, motorState: L3_Anastasia_Uzhentseva.motorState.on, windowOpen: L3_Anastasia_Uzhentseva.windowOpen.open, carrierLoad: 13.0)
